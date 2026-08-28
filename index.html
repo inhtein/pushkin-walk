@@ -434,6 +434,14 @@
   a { color: var(--aqua-deep); }
 
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+  /* ---------- фото ---------- */
+
+  .photo { margin: 2rem 0; }
+  .photo img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; display: block; }
+  .photo.wide img { aspect-ratio: 21/9; }
+  .photo figcaption { margin-top: .6rem; font-size: .86rem; color: var(--ink-3); }
+  .photo-card { width: calc(100% + 3rem); aspect-ratio: 16/9; object-fit: cover; display: block; margin: -1.5rem -1.5rem 0; }
 </style>
 
 <nav class="nav">
@@ -468,6 +476,13 @@
     </dl>
   </div>
 </header>
+
+<div class="wrap">
+  <figure class="photo wide">
+    <img src="img/dvorec-fasad.jpg" alt="Екатерининский дворец, вид на парковый фасад" width="1300" height="867" loading="lazy" decoding="async">
+    <figcaption>Екатерининский дворец, парковый фасад</figcaption>
+  </figure>
+</div>
 
 <section id="ritm">
   <div class="wrap">
@@ -680,6 +695,7 @@
       </article>
 
       <article class="opt" data-tags="calm ticket photo">
+        <img class="photo-card" src="img/ermitazh.jpg" alt="Павильон Эрмитаж в Старом саду Екатерининского парка" width="1280" height="848" loading="lazy" decoding="async">
         <div class="opt-top"><h3>Старый сад</h3><span class="opt-time">30–40 мин</span></div>
         <p>Стриженая французская часть сразу за дворцом: Эрмитаж, Верхняя ванна, Камеронова галерея с колоннадой. Ходить почти не надо.</p>
         <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">спокойно</span><span class="tag">для фото</span></div>
@@ -808,6 +824,12 @@
     </div>
   </div>
 </section>
+
+<div class="wrap">
+  <figure class="photo wide">
+    <img src="img/park-vecher.jpg" alt="Парк в вечернем свете" width="735" height="920" loading="lazy" decoding="async">
+  </figure>
+</div>
 
 <div class="tail">
   <div class="tail-in">
