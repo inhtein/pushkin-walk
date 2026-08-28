@@ -440,6 +440,10 @@
   .photo { margin: 2rem 0; }
   .photo img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; display: block; }
   .photo.wide img { aspect-ratio: 21/9; }
+  .photo.tall img { aspect-ratio: 4/5; }
+  .photo.tall { max-width: 480px; }
+  .photo.small { max-width: 700px; }
+  .row .photo { grid-column: 1 / -1; }
   .photo figcaption { margin-top: .6rem; font-size: .86rem; color: var(--ink-3); }
   .photo-card { width: calc(100% + 3rem); aspect-ratio: 16/9; object-fit: cover; display: block; margin: -1.5rem -1.5rem 0; }
 </style>
@@ -502,16 +506,28 @@
         <div class="row-time">13:30</div>
         <div class="row-title">Луг у канала</div>
         <div class="row-text">Александровский парк, поляна у Крестового канала. Пледы, пицца, утки. Час с лишним никуда не спешим.</div>
+        <figure class="photo tall">
+          <img src="img/krestovyy-most.jpg" alt="Крестовый мост-беседка над каналом в Александровском парке" width="768" height="992" loading="lazy" decoding="async">
+          <figcaption>Крестовый мост над каналом</figcaption>
+        </figure>
       </div>
       <div class="row">
         <div class="row-time">15:00</div>
         <div class="row-title">Дворец</div>
         <div class="row-text">Сеанс с Янтарной комнатой, полтора часа внутри. Выходим в парк уже с той стороны.</div>
+        <figure class="photo small">
+          <img src="img/dvorec-bolshoy-zal.jpg" alt="Большой зал Екатерининского дворца" width="567" height="352" loading="lazy" decoding="async">
+          <figcaption>Большой зал</figcaption>
+        </figure>
       </div>
       <div class="row">
         <div class="row-time">16:30</div>
         <div class="row-title">Большой пруд</div>
         <div class="row-text">Круг два километра: Грот, Чесменская колонна, Турецкая баня, Мраморный мост. Вечерний свет — лучшее время здесь.</div>
+        <figure class="photo tall">
+          <img src="img/park-vecher.jpg" alt="Вечерний свет над Большим прудом" width="735" height="920" loading="lazy" decoding="async">
+          <figcaption>Тот самый вечерний свет</figcaption>
+        </figure>
       </div>
       <div class="row">
         <div class="row-time">18:00</div>
@@ -677,12 +693,14 @@
 
     <div class="options" id="options">
       <article class="opt" data-tags="calm free photo">
+        <img class="photo-card" src="img/kitayskiy-most.jpg" alt="Большой китайский мост с вазонами" width="720" height="478" loading="lazy" decoding="async">
         <div class="opt-top"><h3>Китайская деревня</h3><span class="opt-time">30–40 мин</span></div>
         <p>Ярко-красные пагоды посреди петербургского парка выглядят абсурдно и прекрасно. Рядом Большой китайский мост с вазонами и Крестовый мост-беседка.</p>
         <div class="tags"><span class="tag free">бесплатно</span><span class="tag">спокойно</span><span class="tag">для фото</span></div>
       </article>
 
       <article class="opt" data-tags="move ticket photo">
+        <img class="photo-card" src="img/belaya-bashnya.jpg" alt="Неоготическая Белая башня" width="1400" height="1050" loading="lazy" decoding="async">
         <div class="opt-top"><h3>Белая башня</h3><span class="opt-time">40 мин</span></div>
         <p>Неоготическая башня, на неё можно подняться — сверху видно оба парка сразу. Билет недорогой, покупается на месте. Лестница длинная.</p>
         <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">размяться</span><span class="tag">для фото</span></div>
@@ -695,7 +713,7 @@
       </article>
 
       <article class="opt" data-tags="calm ticket photo">
-        <img class="photo-card" src="img/ermitazh.jpg" alt="Павильон Эрмитаж в Старом саду Екатерининского парка" width="1280" height="848" loading="lazy" decoding="async">
+        <img class="photo-card" src="img/regulyarnyy-park.jpg" alt="Регулярный французский сад за дворцом" width="549" height="364" loading="lazy" decoding="async">
         <div class="opt-top"><h3>Старый сад</h3><span class="opt-time">30–40 мин</span></div>
         <p>Стриженая французская часть сразу за дворцом: Эрмитаж, Верхняя ванна, Камеронова галерея с колоннадой. Ходить почти не надо.</p>
         <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">спокойно</span><span class="tag">для фото</span></div>
@@ -827,7 +845,7 @@
 
 <div class="wrap">
   <figure class="photo wide">
-    <img src="img/park-vecher.jpg" alt="Парк в вечернем свете" width="735" height="920" loading="lazy" decoding="async">
+    <img src="img/ermitazh.jpg" alt="Павильон Эрмитаж в парке" width="1280" height="848" loading="lazy" decoding="async">
   </figure>
 </div>
 
