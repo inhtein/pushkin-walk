@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Пушкин 29.08</title>
+  <meta name="description" content="Прогулка по Царскому Селу 29 августа: ритм дня, карта маршрута, варианты и практика.">
+  <meta property="og:title" content="Пушкин 29.08">
+  <meta property="og:description" content="Прогулка по Царскому Селу 29 августа: ритм дня, карта маршрута, варианты и практика.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🎫</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Golos+Text:wght@400;500;600&display=swap">
+  <style>
+    html { -webkit-text-size-adjust: 100%; }
+    img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+<style>
+  :root {
+    --night: #0F1A1C;
+    --night-2: #16282B;
+    --cream: #F2EFE6;
+    --cream-2: #E7E2D4;
+    --ink: #0F1A1C;
+    --ink-2: #4A5A5C;
+    --ink-3: #7D8B8C;
+    --aqua: #58B8C4;
+    --aqua-deep: #2A7E8C;
+    --sun: #E3B667;
+    --line: #D5CFBE;
+
+    --f-head: "Oswald", "Helvetica Neue", Arial, sans-serif;
+    --f-body: "Golos Text", "Helvetica Neue", Arial, sans-serif;
+
+    --wrap: 66rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --cream: #131C1E;
+      --cream-2: #1B2628;
+      --ink: #EDEAE0;
+      --ink-2: #B4BDBB;
+      --ink-3: #859393;
+      --line: #2C3A3C;
+      --aqua-deep: #7FCBD6;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --cream: #131C1E;
+    --cream-2: #1B2628;
+    --ink: #EDEAE0;
+    --ink-2: #B4BDBB;
+    --ink-3: #859393;
+    --line: #2C3A3C;
+    --aqua-deep: #7FCBD6;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ---------- nav ---------- */
+
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--night);
+    color: var(--cream);
+    border-bottom: 1px solid rgba(242,239,230,0.12);
+  }
+
+  .nav-in {
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    font-family: var(--f-head);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .brand span { color: var(--aqua); }
+
+  .nav-links { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+
+  .nav-links a {
+    font-family: var(--f-head);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(242,239,230,0.72);
+    text-decoration: none;
+    padding: 0.2rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .nav-links a:hover { color: var(--cream); border-bottom-color: var(--aqua); }
+  .nav-links a:focus-visible { outline: 2px solid var(--aqua); outline-offset: 3px; }
+
+  /* ---------- hero ---------- */
+
+  .hero {
+    background: var(--night);
+    color: var(--cream);
+    padding: 4rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(90deg, transparent 0 39px, rgba(88,184,196,0.09) 39px 40px),
+      repeating-linear-gradient(0deg, transparent 0 39px, rgba(88,184,196,0.09) 39px 40px);
+    pointer-events: none;
+  }
+
+  .hero-stack { position: relative; }
+
+  .plate-aqua {
+    background: var(--aqua);
+    color: var(--night);
+    padding: 1rem 1.5rem 3.5rem;
+    max-width: 34rem;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .plate-aqua .kicker {
+    font-family: var(--f-head);
+    font-size: 0.8rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .plate-night {
+    background: var(--night-2);
+    border: 1px solid rgba(88,184,196,0.35);
+    padding: 2.5rem 2rem;
+    max-width: 44rem;
+    margin-top: -2.5rem;
+    position: relative;
+  }
+
+  h1 {
+    font-family: var(--f-head);
+    font-weight: 600;
+    font-size: clamp(2.4rem, 7vw, 4.4rem);
+    line-height: 1.02;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    margin: 0 0 1rem;
+    color: var(--cream);
+  }
+
+  h1 span { color: var(--aqua); display: block; }
+
+  .lede { font-size: 1.08rem; color: rgba(242,239,230,0.8); margin: 0; max-width: 36em; }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 1px;
+    background: rgba(242,239,230,0.16);
+    border: 1px solid rgba(242,239,230,0.16);
+    margin-top: 2.5rem;
+  }
+
+  .fact { background: var(--night); padding: 1rem 1.1rem; }
+
+  .fact dt {
+    font-family: var(--f-head);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sun);
+    margin-bottom: 0.2rem;
+  }
+
+  .fact dd { margin: 0; font-size: 1rem; font-weight: 500; color: var(--cream); }
+
+  /* ---------- sections ---------- */
+
+  section { padding: 4rem 0; }
+  .band { background: var(--cream-2); }
+
+  .sec-head { margin-bottom: 2.5rem; }
+
+  .sec-kicker {
+    font-family: var(--f-head);
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--aqua-deep);
+    margin: 0 0 0.7rem;
+  }
+
+  h2 {
+    font-family: var(--f-head);
+    font-weight: 600;
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin: 0 0 0.8rem;
+  }
+
+  .sec-note { margin: 0; color: var(--ink-2); max-width: 46em; }
+
+  /* ---------- расписание ---------- */
+
+  .rhythm { border-top: 2px solid var(--ink); }
+
+  .row {
+    display: grid;
+    gap: 0.3rem 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  @media (min-width: 720px) { .row { grid-template-columns: 7rem 14rem 1fr; align-items: baseline; } }
+
+  .row-time {
+    font-family: var(--f-head);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--aqua-deep);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .row-title { font-family: var(--f-head); font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .row-text { color: var(--ink-2); font-size: 0.95rem; }
+
+  /* ---------- карта ---------- */
+
+  .map-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    background: var(--cream);
+    padding: 0.5rem;
+  }
+
+  .map-scroll svg { display: block; width: 100%; min-width: 620px; height: auto; }
+  figure.map { margin: 0; }
+  .map figcaption { margin-top: 0.9rem; font-size: 0.86rem; color: var(--ink-3); max-width: 46em; }
+
+  .m-ground { fill: var(--cream-2); }
+  .m-park { fill: #4E7A5E; opacity: 0.26; }
+  .m-park-line { fill: none; stroke: #4E7A5E; stroke-width: 1.5; opacity: 0.6; }
+  .m-water { fill: var(--aqua); opacity: 0.34; }
+  .m-water-line { fill: none; stroke: var(--aqua-deep); stroke-width: 2; opacity: 0.7; }
+  .m-street { stroke: var(--cream); stroke-width: 8; stroke-linecap: round; fill: none; }
+  .m-street-min { stroke: var(--cream); stroke-width: 4.5; stroke-linecap: round; fill: none; opacity: 0.8; }
+  .m-route { fill: none; stroke: var(--sun); stroke-width: 4; stroke-dasharray: 10 8; stroke-linecap: round; }
+  .m-building { fill: var(--sun); opacity: 0.75; }
+  .m-pin { fill: var(--night); }
+  .m-pin-alt { fill: var(--ink-3); }
+  .m-pin-in { fill: var(--aqua); }
+  .m-pin-l { fill: var(--night); font-family: var(--f-head); font-size: 13px; font-weight: 600; text-anchor: middle; }
+  .m-pin-l-alt { fill: var(--night); font-family: var(--f-head); font-size: 13px; font-weight: 600; text-anchor: middle; }
+  .m-area { fill: #3E6349; font-family: var(--f-head); font-size: 13px; letter-spacing: 0.1em; }
+  .m-note { fill: var(--ink-3); font-family: var(--f-body); font-size: 11.5px; }
+  .m-water-t { fill: var(--aqua-deep); font-family: var(--f-body); font-size: 11.5px; font-weight: 500; }
+  .m-street-t { fill: var(--ink-3); font-family: var(--f-head); font-size: 10px; letter-spacing: 0.08em; }
+
+  .legend { display: grid; gap: 0.9rem 2rem; margin: 1.75rem 0 0; padding: 0; list-style: none; }
+  @media (min-width: 640px) { .legend { grid-template-columns: 1fr 1fr; } }
+  .legend li { display: flex; gap: 0.8rem; align-items: flex-start; }
+  .legend li div { display: flex; flex-direction: column; }
+
+  .legend b {
+    flex: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    background: var(--aqua);
+    color: var(--night);
+    font-family: var(--f-head);
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: grid;
+    place-items: center;
+  }
+
+  .legend li.alt b { background: var(--line); color: var(--ink-2); }
+  .legend li span { font-family: var(--f-head); text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.95rem; }
+  .legend li i { color: var(--ink-3); font-style: normal; font-size: 0.87rem; }
+
+  /* ---------- фильтр и карточки ---------- */
+
+  .filter { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: 2rem; }
+
+  .filter-label {
+    font-family: var(--f-head);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-right: 0.4rem;
+  }
+
+  .chip {
+    font-family: var(--f-head);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    background: transparent;
+    border: 1px solid var(--line);
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .chip:hover { border-color: var(--aqua-deep); color: var(--aqua-deep); }
+  .chip:focus-visible { outline: 2px solid var(--aqua-deep); outline-offset: 2px; }
+  .chip[aria-pressed="true"] { background: var(--night); border-color: var(--night); color: var(--cream); }
+
+  .options { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  @media (min-width: 760px) { .options { grid-template-columns: 1fr 1fr; } }
+
+  .opt { background: var(--cream); padding: 1.5rem 1.5rem 1.3rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .opt[hidden] { display: none; }
+  .opt-top { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+  .opt h3 { font-family: var(--f-head); font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.02em; margin: 0; line-height: 1.2; }
+  .opt-time { font-family: var(--f-head); font-size: 0.78rem; letter-spacing: 0.08em; color: var(--ink-3); white-space: nowrap; }
+  .opt p { margin: 0; font-size: 0.94rem; color: var(--ink-2); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+  .tag {
+    font-family: var(--f-head);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    background: var(--cream-2);
+    color: var(--ink-2);
+  }
+
+  .tag.pay { background: var(--sun); color: var(--night); }
+  .tag.free { background: var(--aqua); color: var(--night); }
+
+  .empty { display: none; font-family: var(--f-head); text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-3); padding: 2rem 0; }
+  .empty.on { display: block; }
+
+  /* ---------- сценарии ---------- */
+
+  .scenarios { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  @media (min-width: 820px) { .scenarios { grid-template-columns: repeat(3, 1fr); } }
+
+  .scn { background: var(--cream); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .scn h3 { font-family: var(--f-head); font-size: 1.3rem; text-transform: uppercase; margin: 0; }
+  .scn p { margin: 0; font-size: 0.92rem; color: var(--ink-2); }
+  .scn ol { margin: 0.2rem 0 0; padding-left: 1.1rem; font-size: 0.92rem; color: var(--ink-2); display: flex; flex-direction: column; gap: 0.3rem; }
+
+  /* ---------- практика ---------- */
+
+  .practical { display: grid; gap: 2.5rem; }
+  @media (min-width: 760px) { .practical { grid-template-columns: 1fr 1fr; } }
+
+  .block h3 {
+    font-family: var(--f-head);
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--aqua-deep);
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--aqua);
+  }
+
+  .block ul { margin: 0; padding-left: 1.05rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .block li { font-size: 0.94rem; color: var(--ink-2); }
+  .block li strong { color: var(--ink); font-weight: 600; }
+
+  .warn { background: var(--night); color: var(--cream); padding: 1.4rem 1.5rem; margin-top: 2.5rem; }
+  .warn p { margin: 0; font-size: 0.95rem; }
+  .warn strong { color: var(--sun); }
+
+  /* ---------- футер ---------- */
+
+  .tail { background: var(--night); color: rgba(242,239,230,0.75); padding: 3rem 0; margin-top: 4rem; }
+
+  .tail-in {
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-family: var(--f-head);
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .tail-in span { color: var(--aqua); }
+
+  a { color: var(--aqua-deep); }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<nav class="nav">
+  <div class="nav-in">
+    <div class="brand">29.08 <span>·</span> Пушкин</div>
+    <div class="nav-links">
+      <a href="#ritm">Ритм дня</a>
+      <a href="#karta">Карта</a>
+      <a href="#varianty">Варианты</a>
+      <a href="#praktika">Практика</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-stack">
+    <div class="plate-aqua">
+      <p class="kicker">Суббота · сбор в 13:00</p>
+    </div>
+
+    <div class="plate-night">
+      <h1>Полдня в парках<span>и во дворце</span></h1>
+      <p class="lede">Приезжаем к обеду, берём пиццу по дороге от вокзала, едим на траве у канала, кормим уток. Дальше — Екатерининский дворец и круг к вечернему свету над Большим прудом.</p>
+    </div>
+
+    <dl class="facts">
+      <div class="fact"><dt>Нас</dt><dd>5 человек</dd></div>
+      <div class="fact"><dt>Пешком</dt><dd>4–5 км</dd></div>
+      <div class="fact"><dt>Пледы</dt><dd>3–4, есть</dd></div>
+      <div class="fact"><dt>Дворец</dt><dd>сеанс 15:00</dd></div>
+      <div class="fact"><dt>Парк до</dt><dd>22:00</dd></div>
+    </dl>
+  </div>
+</header>
+
+<section id="ritm">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker">Как ложится день</p>
+      <h2>Ритм, а не расписание</h2>
+      <p class="sec-note">Жёстко привязан только сеанс во дворце — внутрь пускают лишь 15 минут после его начала. Всё остальное сдвигается как пойдёт.</p>
+    </div>
+
+    <div class="rhythm">
+      <div class="row">
+        <div class="row-time">13:00</div>
+        <div class="row-title">Вокзал</div>
+        <div class="row-text">Собираемся, идём в сторону парков и по дороге забираем пиццу на Оранжерейной. Заказать лучше из электрички, на самовынос.</div>
+      </div>
+      <div class="row">
+        <div class="row-time">13:30</div>
+        <div class="row-title">Луг у канала</div>
+        <div class="row-text">Александровский парк, поляна у Крестового канала. Пледы, пицца, утки. Час с лишним никуда не спешим.</div>
+      </div>
+      <div class="row">
+        <div class="row-time">15:00</div>
+        <div class="row-title">Дворец</div>
+        <div class="row-text">Сеанс с Янтарной комнатой, полтора часа внутри. Выходим в парк уже с той стороны.</div>
+      </div>
+      <div class="row">
+        <div class="row-time">16:30</div>
+        <div class="row-title">Большой пруд</div>
+        <div class="row-text">Круг два километра: Грот, Чесменская колонна, Турецкая баня, Мраморный мост. Вечерний свет — лучшее время здесь.</div>
+      </div>
+      <div class="row">
+        <div class="row-time">18:00</div>
+        <div class="row-title">Обратно</div>
+        <div class="row-text">Выходим в сторону вокзала мимо Фёдоровского городка, если ещё есть силы на крюк.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="karta" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker">Куда идём</p>
+      <h2>Карта дня</h2>
+      <p class="sec-note">Одна петля от вокзала и обратно. Цифры на карте совпадают со списком под ней.</p>
+    </div>
+    <figure class="map">
+      <div class="map-scroll">
+        <svg viewBox="0 0 1000 680" role="img" aria-label="Карта прогулки по Пушкину, пять точек по порядку: 1 вокзал Царское Село, 2 пиццерия на Оранжерейной, 3 луг у Крестового канала в Александровском парке, 4 Екатерининский дворец, 5 Большой пруд, и возвращение к вокзалу; отдельно точка 6 — Фёдоровский городок в стороне от маршрута">
+          <defs>
+            <marker id="arw" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--gold)"></path>
+            </marker>
+            <clipPath id="city">
+              <path d="M 540 40 L 990 40 L 990 660 L 660 660 L 676 400 L 540 300 Z"></path>
+            </clipPath>
+          </defs>
+
+          <rect class="m-ground" x="0" y="0" width="1000" height="680"></rect>
+
+          <!-- город -->
+          <g clip-path="url(#city)">
+            <g transform="rotate(-27 760 340)">
+              <path class="m-street" d="M 520 150 L 1060 150"></path>
+              <path class="m-street" d="M 520 232 L 1060 232"></path>
+              <path class="m-street" d="M 520 314 L 1060 314"></path>
+              <path class="m-street" d="M 520 396 L 1060 396"></path>
+              <path class="m-street-min" d="M 520 191 L 1060 191"></path>
+              <path class="m-street-min" d="M 520 273 L 1060 273"></path>
+              <path class="m-street-min" d="M 520 355 L 1060 355"></path>
+              <path class="m-street" d="M 620 110 L 620 450"></path>
+              <path class="m-street" d="M 740 110 L 740 450"></path>
+              <path class="m-street" d="M 860 110 L 860 450"></path>
+              <path class="m-street-min" d="M 680 120 L 680 440"></path>
+              <path class="m-street-min" d="M 800 120 L 800 440"></path>
+              <path class="m-street-min" d="M 920 120 L 920 440"></path>
+              <text class="m-street-t" x="905" y="146">ОРАНЖЕРЕЙНАЯ УЛ.</text>
+              <text class="m-street-t" x="905" y="228">МАЛАЯ УЛ.</text>
+              <text class="m-street-t" x="905" y="310">САДОВАЯ УЛ.</text>
+              <text class="m-street-t" x="734" y="168" transform="rotate(90 734 168)">МОСКОВСКАЯ УЛ.</text>
+            </g>
+          </g>
+
+          <!-- Александровский парк -->
+          <path class="m-park" d="M 100 122 L 300 82 L 470 112 L 522 298 L 360 360 L 140 330 Z"></path>
+          <path class="m-park-line" d="M 100 122 L 300 82 L 470 112 L 522 298 L 360 360 L 140 330 Z"></path>
+
+          <!-- Екатерининский парк -->
+          <path class="m-park" d="M 200 374 L 362 368 L 526 308 L 656 392 L 606 622 L 262 642 Z"></path>
+          <path class="m-park-line" d="M 200 374 L 362 368 L 526 308 L 656 392 L 606 622 L 262 642 Z"></path>
+
+          <!-- вода -->
+          <rect class="m-water" x="206" y="196" width="146" height="100" rx="3"></rect>
+          <rect class="m-water-line" x="206" y="196" width="146" height="100" rx="3"></rect>
+
+          <path class="m-water" d="M 288 496 C 292 452 344 428 396 434 C 452 440 480 472 472 512 C 464 550 412 570 356 562 C 306 554 284 534 288 496 Z"></path>
+          <path class="m-water-line" d="M 288 496 C 292 452 344 428 396 434 C 452 440 480 472 472 512 C 464 550 412 570 356 562 C 306 554 284 534 288 496 Z"></path>
+
+          <!-- дворцы -->
+          <g transform="rotate(-13 486 336)">
+            <rect class="m-building" x="424" y="328" width="126" height="16" rx="2"></rect>
+          </g>
+
+          <!-- подписи областей -->
+          <text class="m-area" x="132" y="146">АЛЕКСАНДРОВСКИЙ</text>
+          <text class="m-area" x="132" y="166">ПАРК</text>
+          <text class="m-note" x="132" y="186">вход свободный</text>
+
+          <text class="m-area" x="576" y="586" text-anchor="end">ЕКАТЕРИНИНСКИЙ ПАРК</text>
+          <text class="m-note" x="576" y="606" text-anchor="end">входит в билет во дворец</text>
+
+          <text class="m-water-t" x="216" y="250">Крестовый канал</text>
+          <text class="m-water-t" x="376" y="526" text-anchor="middle">Большой пруд</text>
+
+          <!-- маршрут -->
+          <path class="m-route" marker-end="url(#arw)" d="M 892 452 C 852 398 800 342 754 304"></path>
+          <path class="m-route" marker-end="url(#arw)" d="M 718 278 C 596 210 430 176 292 216"></path>
+          <path class="m-route" marker-end="url(#arw)" d="M 282 258 C 330 300 410 322 466 330"></path>
+          <path class="m-route" marker-end="url(#arw)" d="M 484 358 C 470 402 436 444 406 470"></path>
+          <path class="m-route" marker-end="url(#arw)" d="M 430 540 C 570 582 730 552 888 490"></path>
+
+          <!-- пины -->
+          <g transform="translate(900,470)">
+            <path class="m-pin" d="M 0 0 c -9 -13 -14 -19 -14 -27 a 14 14 0 1 1 28 0 c 0 8 -5 14 -14 27 z"></path>
+            <circle class="m-pin-in" cx="0" cy="-27" r="9.5"></circle>
+            <text class="m-pin-l" x="0" y="-23">1</text>
+          </g>
+          <g transform="translate(736,292)">
+            <path class="m-pin" d="M 0 0 c -9 -13 -14 -19 -14 -27 a 14 14 0 1 1 28 0 c 0 8 -5 14 -14 27 z"></path>
+            <circle class="m-pin-in" cx="0" cy="-27" r="9.5"></circle>
+            <text class="m-pin-l" x="0" y="-23">2</text>
+          </g>
+          <g transform="translate(268,232)">
+            <path class="m-pin" d="M 0 0 c -9 -13 -14 -19 -14 -27 a 14 14 0 1 1 28 0 c 0 8 -5 14 -14 27 z"></path>
+            <circle class="m-pin-in" cx="0" cy="-27" r="9.5"></circle>
+            <text class="m-pin-l" x="0" y="-23">3</text>
+          </g>
+          <g transform="translate(484,342)">
+            <path class="m-pin" d="M 0 0 c -9 -13 -14 -19 -14 -27 a 14 14 0 1 1 28 0 c 0 8 -5 14 -14 27 z"></path>
+            <circle class="m-pin-in" cx="0" cy="-27" r="9.5"></circle>
+            <text class="m-pin-l" x="0" y="-23">4</text>
+          </g>
+          <g transform="translate(396,486)">
+            <path class="m-pin" d="M 0 0 c -9 -13 -14 -19 -14 -27 a 14 14 0 1 1 28 0 c 0 8 -5 14 -14 27 z"></path>
+            <circle class="m-pin-in" cx="0" cy="-27" r="9.5"></circle>
+            <text class="m-pin-l" x="0" y="-23">5</text>
+          </g>
+          <g transform="translate(628,150)">
+            <path class="m-pin-alt" d="M 0 0 c -9 -13 -14 -19 -14 -27 a 14 14 0 1 1 28 0 c 0 8 -5 14 -14 27 z"></path>
+            <circle class="m-pin-in" cx="0" cy="-27" r="9.5"></circle>
+            <text class="m-pin-l-alt" x="0" y="-23">6</text>
+          </g>
+
+          <!-- компас -->
+          <path d="M 946 118 L 946 74" stroke="currentColor" stroke-width="1.5" opacity="0.45"></path>
+          <path d="M 939 85 L 946 72 L 953 85" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.45"></path>
+          <text class="m-street-t" x="946" y="138" text-anchor="middle">С</text>
+        </svg>
+      </div>
+
+      <ol class="legend">
+        <li><b>1</b><div><span>Вокзал Царское Село</span><i>старт в 13:00, сюда же возвращаемся вечером</i></div></li>
+        <li><b>2</b><div><span>Додо, Оранжерейная 20</span><i>≈1,3 км от вокзала — забираем пиццу</i></div></li>
+        <li><b>3</b><div><span>Луг у Крестового канала</span><i>≈1,5 км — пикник, плед, утки</i></div></li>
+        <li><b>4</b><div><span>Екатерининский дворец</span><i>≈700 м — сеанс 15:00, билет берём заранее</i></div></li>
+        <li><b>5</b><div><span>Большой пруд</span><i>круг по парку ≈2 км, вечерний свет</i></div></li>
+        <li class="alt"><b>6</b><div><span>Фёдоровский городок</span><i>в стороне от петли — если останутся силы</i></div></li>
+      </ol>
+
+      <figcaption>Схема условная: очертания улиц и парков упрощены, расстояния не в масштабе. Петля 1 → 2 → 3 → 4 → 5 и километры в списке — настоящие; точка 6 в стороне и в маршрут не входит.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="varianty">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker">Если захочется большего</p>
+      <h2>Из чего выбираем на месте</h2>
+      <p class="sec-note">Всё в пределах получаса ходьбы друг от друга — решаем прямо на пледе. Фильтр отсеет то, что сегодня не заходит.</p>
+    </div>
+
+    <div class="filter" role="group" aria-label="Фильтр вариантов">
+      <span class="filter-label">Показать</span>
+      <button class="chip" data-tag="all" aria-pressed="true">всё</button>
+      <button class="chip" data-tag="calm" aria-pressed="false">спокойно</button>
+      <button class="chip" data-tag="move" aria-pressed="false">размяться</button>
+      <button class="chip" data-tag="free" aria-pressed="false">бесплатно</button>
+      <button class="chip" data-tag="ticket" aria-pressed="false">нужен билет</button>
+      <button class="chip" data-tag="photo" aria-pressed="false">для фото</button>
+    </div>
+
+    <div class="options" id="options">
+      <article class="opt" data-tags="calm free photo">
+        <div class="opt-top"><h3>Китайская деревня</h3><span class="opt-time">30–40 мин</span></div>
+        <p>Ярко-красные пагоды посреди петербургского парка выглядят абсурдно и прекрасно. Рядом Большой китайский мост с вазонами и Крестовый мост-беседка.</p>
+        <div class="tags"><span class="tag free">бесплатно</span><span class="tag">спокойно</span><span class="tag">для фото</span></div>
+      </article>
+
+      <article class="opt" data-tags="move ticket photo">
+        <div class="opt-top"><h3>Белая башня</h3><span class="opt-time">40 мин</span></div>
+        <p>Неоготическая башня, на неё можно подняться — сверху видно оба парка сразу. Билет недорогой, покупается на месте. Лестница длинная.</p>
+        <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">размяться</span><span class="tag">для фото</span></div>
+      </article>
+
+      <article class="opt" data-tags="move ticket photo">
+        <div class="opt-top"><h3>Круг у Большого пруда</h3><span class="opt-time">1–1,5 часа</span></div>
+        <p>Два километра по ровной дорожке против часовой: Грот, Чесменская колонна с воды, Турецкая баня, Мраморный мост, Пирамида. Главные виды дня.</p>
+        <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">размяться</span><span class="tag">для фото</span></div>
+      </article>
+
+      <article class="opt" data-tags="calm ticket photo">
+        <div class="opt-top"><h3>Старый сад</h3><span class="opt-time">30–40 мин</span></div>
+        <p>Стриженая французская часть сразу за дворцом: Эрмитаж, Верхняя ванна, Камеронова галерея с колоннадой. Ходить почти не надо.</p>
+        <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">спокойно</span><span class="tag">для фото</span></div>
+      </article>
+
+      <article class="opt" data-tags="calm free">
+        <div class="opt-top"><h3>Досидеть на пледе</h3><span class="opt-time">сколько хочется</span></div>
+        <p>Абсолютно легальный вариант дня. Луг у канала большой, утки приходят сами, а дворец никуда не денется до следующего раза.</p>
+        <div class="tags"><span class="tag free">бесплатно</span><span class="tag">спокойно</span></div>
+      </article>
+
+      <article class="opt" data-tags="calm free photo">
+        <div class="opt-top"><h3>Александровский дворец</h3><span class="opt-time">20 мин</span></div>
+        <p>Строгий классицизм вместо барочной пышности — последний дом семьи Николая II. Внутрь не идём, но обойти вокруг стоит: народу заметно меньше.</p>
+        <div class="tags"><span class="tag free">бесплатно</span><span class="tag">спокойно</span><span class="tag">для фото</span></div>
+      </article>
+
+      <article class="opt" data-tags="move free photo">
+        <div class="opt-top"><h3>Фёдоровский городок</h3><span class="opt-time">30 мин</span></div>
+        <p>Псевдорусский терем-комплекс с башнями и воротами, куда почти не доходят туристы. Удобно поставить в конец: он по дороге к вокзалу.</p>
+        <div class="tags"><span class="tag free">бесплатно</span><span class="tag">размяться</span><span class="tag">для фото</span></div>
+      </article>
+
+      <article class="opt" data-tags="calm ticket">
+        <div class="opt-top"><h3>Ратная палата</h3><span class="opt-time">1 час</span></div>
+        <p>Единственный в стране музей Первой мировой войны, в том же Александровском парке. Вариант для тех, кому захочется в помещение, если пойдёт дождь.</p>
+        <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">спокойно</span></div>
+      </article>
+
+      <article class="opt" data-tags="calm free">
+        <div class="opt-top"><h3>Отдельный парк</h3><span class="opt-time">по ситуации</span></div>
+        <p>Запасная поляна, если у канала окажется людно: пруды ближе к вокзалу, куда туристы почти не заходят.</p>
+        <div class="tags"><span class="tag free">бесплатно</span><span class="tag">спокойно</span></div>
+      </article>
+
+      <article class="opt" data-tags="move free">
+        <div class="opt-top"><h3>Вглубь парка</h3><span class="opt-time">сколько угодно</span></div>
+        <p>За прудами Александровского начинаются дорожки, где вообще никого. Заблудиться негде, туристов нет совсем.</p>
+        <div class="tags"><span class="tag free">бесплатно</span><span class="tag">размяться</span></div>
+      </article>
+    </div>
+
+    <p class="empty" id="empty">По этому фильтру ничего не осталось</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker">Одна на всех</p>
+      <h2>Три версии дня</h2>
+      <p class="sec-note">Выбираем до того, как купим билеты: от этого зависит время сеанса.</p>
+    </div>
+
+    <div class="scenarios">
+      <div class="scn">
+        <h3>Спокойный</h3>
+        <p>Максимум травы, минимум шагов. Около 3 км.</p>
+        <ol><li>Долгий обед у канала</li><li>Китайская деревня и мосты</li><li>Обратно на плед</li><li>Вдоль пруда без круга</li></ol>
+      </div>
+      <div class="scn">
+        <h3>Дворцовый</h3>
+        <p>Ради Янтарной комнаты. Сеанс на 15:00.</p>
+        <ol><li>Обед у канала до 14:30</li><li>Сеанс во дворце</li><li>Старый сад и галерея</li><li>Круг вокруг пруда</li></ol>
+      </div>
+      <div class="scn">
+        <h3>Ходовой</h3>
+        <p>Для тех, кому надо разгуляться. 6–7 км.</p>
+        <ol><li>Обед у канала</li><li>Белая башня с подъёмом</li><li>Вглубь Александровского</li><li>Круг и Фёдоровский городок</li></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="praktika">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker">Что надо знать</p>
+      <h2>Практика</h2>
+    </div>
+
+    <div class="practical">
+      <div class="block">
+        <h3>Билеты</h3>
+        <ul>
+          <li><strong>Билеты во дворец есть</strong> — покупаются онлайн на tkt.tzar.ru, на сегодня свободны почти все сеансы. Берём пять мест на один.</li>
+          <li><strong>Вход строго по сеансу:</strong> попасть внутрь можно только в течение 15 минут после начала. Опоздали — билет сгорел.</li>
+          <li><strong>Этот же билет включает Екатерининский парк</strong>, отдельный входной не нужен. Александровский парк бесплатный.</li>
+          <li><strong>Льготные онлайн не бронируются</strong> — их берут в кассе с документом.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h3>Как добраться</h3>
+        <ul>
+          <li><strong>Электричка</strong> с Витебского вокзала до станции Царское Село — около получаса.</li>
+          <li><strong>От «Московской»</strong> — маршрутки в сторону Пушкина, 30–40 минут без пробок.</li>
+          <li><strong>От «Купчино»</strong> — автобус, обычно самый быстрый вариант.</li>
+          <li>Номера маршрутов иногда меняются — проверьте перед выездом.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h3>Где взять пиццу</h3>
+        <ul>
+          <li><strong>Додо, Оранжерейная 20</strong> — почти по дороге от вокзала к паркам. Заказать с телефона на самовынос и забрать готовую.</li>
+          <li><strong>Если занято</strong> — по Московской и Оранжерейной хватает пекарен и супермаркетов, там же добрать воду.</li>
+          <li><strong>На пятерых</strong> — три большие, если это основная еда.</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h3>С собой</h3>
+        <ul>
+          <li><strong>Пледы</strong> — три наших плюс, если получится, ещё один от кого-то из вас.</li>
+          <li><strong>Вода</strong> — точек в парках мало, проще купить по дороге.</li>
+          <li><strong>Ветровка:</strong> над Большим прудом сквозит даже в тёплый день.</li>
+          <li><strong>Шоппер</strong> под коробки и мусор.</li>
+          <li><strong>Зерно уткам</strong> — овсянка или пшеница. Хлеб им вредит: от него проблемы с печенью и деформация крыльев.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warn">
+      <p><strong>Важно про пикник.</strong> В Екатерининском парке на газонах располагаться нельзя — там охрана, и с пледа попросят встать. Все посиделки только в Александровском парке, он для этого и выбран.</p>
+    </div>
+  </div>
+</section>
+
+<div class="tail">
+  <div class="tail-in">
+    <div>Пушкин <span>·</span> Царское Село</div>
+    <div>29 августа <span>·</span> сбор в 13:00</div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+    var opts = Array.prototype.slice.call(document.querySelectorAll('.opt'));
+    var empty = document.getElementById('empty');
+
+    function apply(tag) {
+      var shown = 0;
+      opts.forEach(function (o) {
+        var match = tag === 'all' || o.dataset.tags.split(' ').indexOf(tag) !== -1;
+        o.hidden = !match;
+        if (match) shown++;
+      });
+      empty.classList.toggle('on', shown === 0);
+    }
+
+    chips.forEach(function (c) {
+      c.addEventListener('click', function () {
+        chips.forEach(function (x) { x.setAttribute('aria-pressed', String(x === c)); });
+        apply(c.dataset.tag);
+      });
+    });
+  })();
+</script>
+</body>
+</html>
