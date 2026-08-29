@@ -352,8 +352,9 @@
   .options { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
   @media (min-width: 760px) { .options { grid-template-columns: 1fr 1fr; } }
 
-  .opt { background: var(--cream); padding: 1.5rem 1.5rem 1.3rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .opt { background: var(--cream); padding: 0; display: flex; flex-direction: column; }
   .opt[hidden] { display: none; }
+  .opt-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.7rem; }
   .opt-top { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
   .opt h3 { font-family: var(--f-head); font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.02em; margin: 0; line-height: 1.2; }
   .opt-time { font-family: var(--f-head); font-size: 0.78rem; letter-spacing: 0.08em; color: var(--ink-3); white-space: nowrap; }
@@ -441,7 +442,7 @@
   .photo img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; display: block; }
   .photo.wide img { aspect-ratio: 21/9; max-height: 380px; }
   .photo figcaption { margin-top: .6rem; font-size: .86rem; color: var(--ink-3); }
-  .photo-card { width: calc(100% + 3rem); aspect-ratio: 16/9; object-fit: cover; display: block; margin: -1.5rem -1.5rem 0; }
+  .photo-card { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; margin: 0; }
 
   .row-photo { position: relative; align-self: start; margin: 0; }
   .row-photo img {
@@ -710,66 +711,86 @@
     <div class="options" id="options">
       <article class="opt" data-tags="calm free photo">
         <img class="photo-card" src="img/kitayskiy-most.jpg" alt="Большой китайский мост с вазонами" width="720" height="478" loading="lazy" decoding="async">
-        <div class="opt-top"><h3>Китайская деревня</h3><span class="opt-time">30–40 мин</span></div>
-        <p>Ярко-красные пагоды посреди петербургского парка выглядят абсурдно и прекрасно. Рядом Большой китайский мост с вазонами и Крестовый мост-беседка.</p>
-        <div class="tags"><span class="tag free">бесплатно</span><span class="tag">спокойно</span><span class="tag">для фото</span></div>
+        <div class="opt-body">
+          <div class="opt-top"><h3>Китайская деревня</h3><span class="opt-time">30–40 мин</span></div>
+          <p>Ярко-красные пагоды посреди петербургского парка выглядят абсурдно и прекрасно. Рядом Большой китайский мост с вазонами и Крестовый мост-беседка.</p>
+          <div class="tags"><span class="tag free">бесплатно</span><span class="tag">спокойно</span><span class="tag">для фото</span></div>
+        </div>
       </article>
 
       <article class="opt" data-tags="move ticket photo">
         <img class="photo-card" src="img/belaya-bashnya.jpg" alt="Неоготическая Белая башня" width="1400" height="1050" loading="lazy" decoding="async">
-        <div class="opt-top"><h3>Белая башня</h3><span class="opt-time">40 мин</span></div>
-        <p>Неоготическая башня, на неё можно подняться — сверху видно оба парка сразу. Билет недорогой, покупается на месте. Лестница длинная.</p>
-        <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">размяться</span><span class="tag">для фото</span></div>
+        <div class="opt-body">
+          <div class="opt-top"><h3>Белая башня</h3><span class="opt-time">40 мин</span></div>
+          <p>Неоготическая башня, на неё можно подняться — сверху видно оба парка сразу. Билет недорогой, покупается на месте. Лестница длинная.</p>
+          <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">размяться</span><span class="tag">для фото</span></div>
+        </div>
       </article>
 
       <article class="opt" data-tags="move ticket photo">
         <img class="photo-card" src="img/pavilon-u-pruda.jpg" alt="Павильон на берегу Большого пруда" width="800" height="600" loading="lazy" decoding="async">
-        <div class="opt-top"><h3>Круг у Большого пруда</h3><span class="opt-time">1–1,5 часа</span></div>
-        <p>Два километра по ровной дорожке против часовой: Грот, Чесменская колонна с воды, Турецкая баня, Мраморный мост, Пирамида. Главные виды дня.</p>
-        <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">размяться</span><span class="tag">для фото</span></div>
+        <div class="opt-body">
+          <div class="opt-top"><h3>Круг у Большого пруда</h3><span class="opt-time">1–1,5 часа</span></div>
+          <p>Два километра по ровной дорожке против часовой: Грот, Чесменская колонна с воды, Турецкая баня, Мраморный мост, Пирамида. Главные виды дня.</p>
+          <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">размяться</span><span class="tag">для фото</span></div>
+        </div>
       </article>
 
       <article class="opt" data-tags="calm ticket photo">
         <img class="photo-card" src="img/regulyarnyy-park.jpg" alt="Регулярный французский сад за дворцом" width="549" height="364" loading="lazy" decoding="async">
-        <div class="opt-top"><h3>Старый сад</h3><span class="opt-time">30–40 мин</span></div>
-        <p>Стриженая французская часть сразу за дворцом: Эрмитаж, Верхняя ванна, Камеронова галерея с колоннадой. Ходить почти не надо.</p>
-        <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">спокойно</span><span class="tag">для фото</span></div>
+        <div class="opt-body">
+          <div class="opt-top"><h3>Старый сад</h3><span class="opt-time">30–40 мин</span></div>
+          <p>Стриженая французская часть сразу за дворцом: Эрмитаж, Верхняя ванна, Камеронова галерея с колоннадой. Ходить почти не надо.</p>
+          <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">спокойно</span><span class="tag">для фото</span></div>
+        </div>
       </article>
 
       <article class="opt" data-tags="calm free">
-        <div class="opt-top"><h3>Досидеть на пледе</h3><span class="opt-time">сколько хочется</span></div>
-        <p>Абсолютно легальный вариант дня. Луг у канала большой, утки приходят сами, а дворец никуда не денется до следующего раза.</p>
-        <div class="tags"><span class="tag free">бесплатно</span><span class="tag">спокойно</span></div>
+        <div class="opt-body">
+          <div class="opt-top"><h3>Досидеть на пледе</h3><span class="opt-time">сколько хочется</span></div>
+          <p>Абсолютно легальный вариант дня. Луг у канала большой, утки приходят сами, а дворец никуда не денется до следующего раза.</p>
+          <div class="tags"><span class="tag free">бесплатно</span><span class="tag">спокойно</span></div>
+        </div>
       </article>
 
       <article class="opt" data-tags="calm free photo">
-        <div class="opt-top"><h3>Александровский дворец</h3><span class="opt-time">20 мин</span></div>
-        <p>Строгий классицизм вместо барочной пышности — последний дом семьи Николая II. Внутрь не идём, но обойти вокруг стоит: народу заметно меньше.</p>
-        <div class="tags"><span class="tag free">бесплатно</span><span class="tag">спокойно</span><span class="tag">для фото</span></div>
+        <div class="opt-body">
+          <div class="opt-top"><h3>Александровский дворец</h3><span class="opt-time">20 мин</span></div>
+          <p>Строгий классицизм вместо барочной пышности — последний дом семьи Николая II. Внутрь не идём, но обойти вокруг стоит: народу заметно меньше.</p>
+          <div class="tags"><span class="tag free">бесплатно</span><span class="tag">спокойно</span><span class="tag">для фото</span></div>
+        </div>
       </article>
 
       <article class="opt" data-tags="move free photo">
-        <div class="opt-top"><h3>Фёдоровский городок</h3><span class="opt-time">30 мин</span></div>
-        <p>Псевдорусский терем-комплекс с башнями и воротами, куда почти не доходят туристы. Удобно поставить в конец: он по дороге к вокзалу.</p>
-        <div class="tags"><span class="tag free">бесплатно</span><span class="tag">размяться</span><span class="tag">для фото</span></div>
+        <div class="opt-body">
+          <div class="opt-top"><h3>Фёдоровский городок</h3><span class="opt-time">30 мин</span></div>
+          <p>Псевдорусский терем-комплекс с башнями и воротами, куда почти не доходят туристы. Удобно поставить в конец: он по дороге к вокзалу.</p>
+          <div class="tags"><span class="tag free">бесплатно</span><span class="tag">размяться</span><span class="tag">для фото</span></div>
+        </div>
       </article>
 
       <article class="opt" data-tags="calm ticket">
-        <div class="opt-top"><h3>Ратная палата</h3><span class="opt-time">1 час</span></div>
-        <p>Единственный в стране музей Первой мировой войны, в том же Александровском парке. Вариант для тех, кому захочется в помещение, если пойдёт дождь.</p>
-        <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">спокойно</span></div>
+        <div class="opt-body">
+          <div class="opt-top"><h3>Ратная палата</h3><span class="opt-time">1 час</span></div>
+          <p>Единственный в стране музей Первой мировой войны, в том же Александровском парке. Вариант для тех, кому захочется в помещение, если пойдёт дождь.</p>
+          <div class="tags"><span class="tag pay">нужен билет</span><span class="tag">спокойно</span></div>
+        </div>
       </article>
 
       <article class="opt" data-tags="calm free">
-        <div class="opt-top"><h3>Отдельный парк</h3><span class="opt-time">по ситуации</span></div>
-        <p>Запасная поляна, если у канала окажется людно: пруды ближе к вокзалу, куда туристы почти не заходят.</p>
-        <div class="tags"><span class="tag free">бесплатно</span><span class="tag">спокойно</span></div>
+        <div class="opt-body">
+          <div class="opt-top"><h3>Отдельный парк</h3><span class="opt-time">по ситуации</span></div>
+          <p>Запасная поляна, если у канала окажется людно: пруды ближе к вокзалу, куда туристы почти не заходят.</p>
+          <div class="tags"><span class="tag free">бесплатно</span><span class="tag">спокойно</span></div>
+        </div>
       </article>
 
       <article class="opt" data-tags="move free">
-        <div class="opt-top"><h3>Вглубь парка</h3><span class="opt-time">сколько угодно</span></div>
-        <p>За прудами Александровского начинаются дорожки, где вообще никого. Заблудиться негде, туристов нет совсем.</p>
-        <div class="tags"><span class="tag free">бесплатно</span><span class="tag">размяться</span></div>
+        <div class="opt-body">
+          <div class="opt-top"><h3>Вглубь парка</h3><span class="opt-time">сколько угодно</span></div>
+          <p>За прудами Александровского начинаются дорожки, где вообще никого. Заблудиться негде, туристов нет совсем.</p>
+          <div class="tags"><span class="tag free">бесплатно</span><span class="tag">размяться</span></div>
+        </div>
       </article>
     </div>
 
