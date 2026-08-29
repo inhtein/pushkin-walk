@@ -441,7 +441,16 @@
   .photo { margin: 2rem 0; }
   .photo.wide { margin: 0; }
   .photo img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; display: block; }
-  .photo.wide img { aspect-ratio: 21/9; max-height: 380px; }
+  .photo.wide img { aspect-ratio: 21/9; max-height: 440px; }
+
+  .wrap-full { width: 100%; }
+  .wrap-full .photo.wide { margin: 0; }
+  .wrap-full .photo.wide img { width: 100%; }
+  .wrap-full .photo.wide figcaption {
+    max-width: 66rem;
+    margin: .7rem auto 0;
+    padding: 0 1.5rem;
+  }
   .photo figcaption { margin-top: .6rem; font-size: .86rem; color: var(--ink-3); }
   .photo-card { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; margin: 0; }
 
@@ -495,7 +504,7 @@
   </div>
 </header>
 
-<div class="wrap">
+<div class="wrap-full">
   <figure class="photo wide">
     <img src="img/dvorec-fasad.jpg" alt="Екатерининский дворец, вид на парковый фасад" width="1300" height="867" loading="lazy" decoding="async">
     <figcaption>Екатерининский дворец, парковый фасад</figcaption>
@@ -881,7 +890,7 @@
   </div>
 </section>
 
-<div class="wrap">
+<div class="wrap-full">
   <figure class="photo wide">
     <img src="img/ermitazh.jpg" alt="Павильон Эрмитаж в парке" width="1280" height="848" loading="lazy" decoding="async">
   </figure>
