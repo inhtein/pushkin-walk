@@ -243,7 +243,7 @@
 
   /* ---------- расписание ---------- */
 
-  .rhythm { border-top: 2px solid var(--ink); }
+  .rhythm { border-top: 2px solid var(--ink); overflow: hidden; }
 
   .row {
     display: grid;
@@ -252,7 +252,7 @@
     border-bottom: 1px solid var(--line);
   }
 
-  @media (min-width: 720px) { .row { grid-template-columns: 7rem 14rem 1fr; align-items: baseline; } }
+  @media (min-width: 720px) { .row { grid-template-columns: 6rem 11rem minmax(0, 1fr) 220px; align-items: baseline; } }
 
   .row-time {
     font-family: var(--f-head);
@@ -439,13 +439,29 @@
 
   .photo { margin: 2rem 0; }
   .photo img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; display: block; }
-  .photo.wide img { aspect-ratio: 21/9; }
-  .photo.tall img { aspect-ratio: 4/5; }
-  .photo.tall { max-width: 480px; }
-  .photo.small { max-width: 700px; }
-  .row .photo { grid-column: 1 / -1; }
+  .photo.wide img { aspect-ratio: 21/9; max-height: 380px; }
   .photo figcaption { margin-top: .6rem; font-size: .86rem; color: var(--ink-3); }
   .photo-card { width: calc(100% + 3rem); aspect-ratio: 16/9; object-fit: cover; display: block; margin: -1.5rem -1.5rem 0; }
+
+  .row-photo { position: relative; align-self: start; margin: 0; }
+  .row-photo img {
+    position: relative; z-index: 1;
+    width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block;
+  }
+  .row-photo::after {
+    content: ""; position: absolute; z-index: 0;
+    inset: 12px -12px -12px 12px;
+    border: 1px solid var(--aqua);
+  }
+  .row-photo figcaption {
+    margin-top: 1.1rem; font-size: .78rem; line-height: 1.35; color: var(--ink-3);
+  }
+
+  @media (max-width: 719px) {
+    .row-photo { max-width: 280px; margin-top: 1rem; }
+    .row-photo img { aspect-ratio: 3/2; }
+    .row-photo::after { inset: 8px -8px -8px 8px; }
+  }
 </style>
 
 <nav class="nav">
@@ -506,7 +522,7 @@
         <div class="row-time">13:30</div>
         <div class="row-title">Луг у канала</div>
         <div class="row-text">Александровский парк, поляна у Крестового канала. Пледы, пицца, утки. Час с лишним никуда не спешим.</div>
-        <figure class="photo tall">
+        <figure class="row-photo">
           <img src="img/krestovyy-most.jpg" alt="Крестовый мост-беседка над каналом в Александровском парке" width="768" height="992" loading="lazy" decoding="async">
           <figcaption>Крестовый мост над каналом</figcaption>
         </figure>
@@ -515,7 +531,7 @@
         <div class="row-time">15:00</div>
         <div class="row-title">Дворец</div>
         <div class="row-text">Сеанс с Янтарной комнатой, полтора часа внутри. Выходим в парк уже с той стороны.</div>
-        <figure class="photo small">
+        <figure class="row-photo">
           <img src="img/dvorec-bolshoy-zal.jpg" alt="Большой зал Екатерининского дворца" width="567" height="352" loading="lazy" decoding="async">
           <figcaption>Большой зал</figcaption>
         </figure>
@@ -524,7 +540,7 @@
         <div class="row-time">16:30</div>
         <div class="row-title">Большой пруд</div>
         <div class="row-text">Круг два километра: Грот, Чесменская колонна, Турецкая баня, Мраморный мост. Вечерний свет — лучшее время здесь.</div>
-        <figure class="photo tall">
+        <figure class="row-photo">
           <img src="img/park-vecher.jpg" alt="Вечерний свет над Большим прудом" width="735" height="920" loading="lazy" decoding="async">
           <figcaption>Тот самый вечерний свет</figcaption>
         </figure>
