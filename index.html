@@ -8,6 +8,7 @@
   <meta property="og:title" content="Пушкин 29.08">
   <meta property="og:description" content="Прогулка по Царскому Селу 29 августа: ритм дня, карта маршрута, варианты и практика.">
   <meta property="og:type" content="website">
+  <meta name="build" content="2026-08-29-0331">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎫%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -926,6 +927,29 @@
       });
     });
   })();
+</script>
+
+<script>
+(function () {
+  var meta = document.querySelector('meta[name="build"]');
+  if (!meta) return;
+  var current = meta.content;
+
+  function check() {
+    fetch('index.html?cb=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        var m = html.match(/name="build"\s+content="([^"]+)"/);
+        if (m && m[1] !== current) location.reload();
+      })
+      .catch(function () {});
+  }
+
+  check();
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) check();
+  });
+})();
 </script>
 </body>
 </html>
