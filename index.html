@@ -252,7 +252,7 @@
     border-bottom: 1px solid var(--line);
   }
 
-  @media (min-width: 720px) { .row { grid-template-columns: 6rem 11rem minmax(0, 1fr) 220px; align-items: baseline; } }
+  @media (min-width: 720px) { .row { grid-template-columns: 7rem 14rem 1fr; align-items: baseline; } }
 
   .row-time {
     font-family: var(--f-head);
@@ -444,24 +444,16 @@
   .photo figcaption { margin-top: .6rem; font-size: .86rem; color: var(--ink-3); }
   .photo-card { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; margin: 0; }
 
-  .row-photo { position: relative; align-self: start; margin: 0; }
-  .row-photo img {
-    position: relative; z-index: 1;
-    width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block;
+  .gallery { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+  @media (min-width: 560px) { .gallery { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 900px) { .gallery { grid-template-columns: repeat(4, 1fr); } }
+  .gallery figure { margin: 0; }
+  .gallery img {
+    display: block; width: 100%; aspect-ratio: 4/3;
+    object-fit: cover; background: var(--cream);
   }
-  .row-photo::after {
-    content: ""; position: absolute; z-index: 0;
-    inset: 12px -12px -12px 12px;
-    border: 1px solid var(--aqua);
-  }
-  .row-photo figcaption {
-    margin-top: 1.1rem; font-size: .78rem; line-height: 1.35; color: var(--ink-3);
-  }
-
-  @media (max-width: 719px) {
-    .row-photo { max-width: 280px; margin-top: 1rem; }
-    .row-photo img { aspect-ratio: 3/2; }
-    .row-photo::after { inset: 8px -8px -8px 8px; }
+  .gallery figcaption {
+    margin-top: .6rem; font-size: .8rem; line-height: 1.35; color: var(--ink-3);
   }
 </style>
 
@@ -523,34 +515,37 @@
         <div class="row-time">13:30</div>
         <div class="row-title">Луг у канала</div>
         <div class="row-text">Александровский парк, поляна у Крестового канала. Пледы, пицца, утки. Час с лишним никуда не спешим.</div>
-        <figure class="row-photo">
-          <img src="img/krestovyy-most.jpg" alt="Крестовый мост-беседка над каналом в Александровском парке" width="768" height="992" loading="lazy" decoding="async">
-          <figcaption>Крестовый мост над каналом</figcaption>
-        </figure>
       </div>
       <div class="row">
         <div class="row-time">15:00</div>
         <div class="row-title">Дворец</div>
         <div class="row-text">Сеанс с Янтарной комнатой, полтора часа внутри. Выходим в парк уже с той стороны.</div>
-        <figure class="row-photo">
-          <img src="img/dvorec-bolshoy-zal.jpg" alt="Большой зал Екатерининского дворца" width="567" height="352" loading="lazy" decoding="async">
-          <figcaption>Большой зал</figcaption>
-        </figure>
       </div>
       <div class="row">
         <div class="row-time">16:30</div>
         <div class="row-title">Большой пруд</div>
         <div class="row-text">Круг два километра: Грот, Чесменская колонна, Турецкая баня, Мраморный мост. Вечерний свет — лучшее время здесь.</div>
-        <figure class="row-photo">
-          <img src="img/park-vecher.jpg" alt="Вечерний свет над Большим прудом" width="735" height="920" loading="lazy" decoding="async">
-          <figcaption>Тот самый вечерний свет</figcaption>
-        </figure>
       </div>
       <div class="row">
         <div class="row-time">18:00</div>
         <div class="row-title">Обратно</div>
         <div class="row-text">Выходим в сторону вокзала мимо Фёдоровского городка, если ещё есть силы на крюк.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker">Куда едем</p>
+      <h2>Как это выглядит</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="img/krestovyy-most.jpg" alt="Крестовый мост над каналом в Александровском парке" loading="lazy" decoding="async"><figcaption>Крестовый мост над каналом</figcaption></figure>
+      <figure><img src="img/dvorec-bolshoy-zal.jpg" alt="Большой зал Екатерининского дворца" loading="lazy" decoding="async"><figcaption>Большой зал</figcaption></figure>
+      <figure><img src="img/dvorec-zal-zerkala.jpg" alt="Парадный зал дворца с зеркалами и золочёной резьбой" loading="lazy" decoding="async"><figcaption>Парадная анфилада</figcaption></figure>
+      <figure><img src="img/park-vecher.jpg" alt="Мостик через канал в вечернем свете" loading="lazy" decoding="async"><figcaption>Вечерний свет в парке</figcaption></figure>
     </div>
   </div>
 </section>
