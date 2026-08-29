@@ -8,7 +8,7 @@
   <meta property="og:title" content="Пушкин 29.08">
   <meta property="og:description" content="Прогулка по Царскому Селу 29 августа: ритм дня, карта маршрута, варианты и практика.">
   <meta property="og:type" content="website">
-  <meta name="build" content="2026-08-29-1141">
+  <meta name="build" content="2026-08-29-1143">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎫%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -430,6 +430,14 @@
     margin-top: .6rem; font-size: .8rem; line-height: 1.35; color: var(--ink-3);
   }
 
+  .map-key { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+  .map-key > * { min-width: 0; }
+
+  .map-points { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 560px) { .map-points { grid-template-columns: 1fr 1fr; } }
+  .map-points > * { min-width: 0; }
+  .map-points * { overflow-wrap: anywhere; }
+
   @media (max-width: 719px) {
     section { padding: 2rem 0; }
   }
@@ -837,7 +845,7 @@
       </svg>
       </div>
 
-      <div style="display:flex; flex-wrap:wrap; gap:8px 28px; align-items:center; margin-top:14px; padding-top:13px; border-top:1px solid #E2D9C9">
+      <div class="map-key" style="align-items:center; margin-top:14px; padding-top:13px; border-top:1px solid #E2D9C9">
         <div style="display:flex; align-items:center; gap:9px">
           <svg width="32" height="10" viewBox="0 0 32 10" style="display:block"><path d="M 2 5 H 30" fill="none" stroke="#EBCE97" stroke-width="8" stroke-linecap="round" opacity="0.55"></path><path d="M 2 5 H 30" fill="none" stroke="#C98A2E" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.5 11"></path></svg>
           <span style="font-family:'Fira Sans Condensed', 'PT Sans Narrow', sans-serif; font-size:12.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#8C8478">петля дня</span>
@@ -860,7 +868,7 @@
         </div>
       </div>
 
-    <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); column-gap:56px; row-gap:24px; margin-top:34px">
+    <div class="map-points" style="margin-top:34px">
       <div style="display:flex; gap:14px; align-items:flex-start">
         <span style="flex:0 0 auto; width:27px; height:27px; border-radius:4px; background:#2C7F90; color:#F5F1E6; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center">1</span>
         <div>
